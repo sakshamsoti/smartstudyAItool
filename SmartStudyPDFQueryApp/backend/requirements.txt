@@ -1,0 +1,7 @@
+pymongo
+langchain-community
+langchain-openai
+langchain-chroma
+pdfplumber
+PyMuPDF
+pandas
