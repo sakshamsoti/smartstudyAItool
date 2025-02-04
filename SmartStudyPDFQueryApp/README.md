@@ -1,6 +1,6 @@
-# DocuDive - PDF Query Application
+# SmartStudy - PDF Query Application
 
-DocuDive is a Streamlit-based web application that allows users to upload PDFs, extract text, and query the document using OpenAI's GPT models.
+Smart Study is a Streamlit-based web application that allows users to upload PDFs, extract text, and query the document using OpenAI's GPT models.
 
 ## Features
 - Upload PDFs for processing.
@@ -22,7 +22,7 @@ streamlit run frontend/app.py
 
 ## Project Structure
 ```
-docudive/
+SmartStudyPDFQueryApp/
 ├── backend/    # Backend processing
 │   ├── backend.py
 │   ├── requirements.txt
