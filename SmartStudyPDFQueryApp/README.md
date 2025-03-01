@@ -1,11 +1,12 @@
 # SmartStudy - PDF Query Application
 
-Smart Study is a Streamlit-based web application that allows users to upload PDFs, extract text, and query the document using OpenAI's GPT models.
+SmartStudy is a multi-agent Streamlit-based web application that allows users to upload PDFs, extract text, and query documents using OpenAI's GPT models. The application now leverages LangGraph to implement a multi-agent architecture, improving modularity, efficiency, and scalability.
 
 ## Features
-- Upload PDFs for processing.
-- Extract text and search through PDFs using AI.
-- Uses LangChain and MongoDB for efficient document retrieval.
+✅ Multi-Agent Architecture using LangGraph for modular and parallel processing.
+✅ PDF Upload & Processing – Extracts text, images, and tables from PDFs.
+✅ Efficient Document Retrieval – Uses LangChain with MongoDB & Chroma for vector search.
+✅ Conversational AI – Enables users to query documents and receive AI-generated responses.
 
 ## Installation
 ```sh
@@ -23,11 +24,20 @@ streamlit run frontend/app.py
 ## Project Structure
 ```
 SmartStudyPDFQueryApp/
-├── backend/    # Backend processing
+├── backend/    # Backend processing with LangGraph multi-agent architecture
 │   ├── backend.py
 │   ├── requirements.txt
-├── frontend/   # Streamlit app
+├── frontend/   # Streamlit-based user interface
 │   ├── app.py
 │   ├── requirements.txt
-└── README.md
+└── README.md   # Project documentation
+```
+## Multi-Agent Workflow
+
+```
+graph TD
+    A[User Uploads PDF] -->|Process Document| B[Document Processor Agent]
+    B -->|Extract Text, Images, Tables| C[Vector Storage Agent]
+    C -->|Store & Retrieve Embeddings| D[Chat Agent]
+    D -->|Generate AI Response| E[User Gets Answer]
 ```
