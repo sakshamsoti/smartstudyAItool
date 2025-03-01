@@ -15,11 +15,10 @@ Vector Storage Agent – Chunks text, generates embeddings, and stores data in C
 Chat Agent – Handles user queries by retrieving relevant content and generating AI responses.
 Orchestrator (LangGraph) – Manages the workflow between agents for efficient execution.
 Installation
-sh
-Copy
-Edit
+
 # Install dependencies
 pip install -r backend/requirements.txt
+
 pip install -r frontend/requirements.txt
 
 # Run the backend (if needed in future expansion)
@@ -28,9 +27,7 @@ python backend/backend.py
 # Run the Streamlit app
 streamlit run frontend/app.py
 Project Structure
-bash
-Copy
-Edit
+
 SmartStudyPDFQueryApp/
 ├── backend/    # Backend processing with LangGraph multi-agent architecture
 │   ├── backend.py
