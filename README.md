@@ -1,43 +1,84 @@
-# SmartStudy - PDF Query Application
+# SmartStudy: AI-Powered PDF Query App
 
-SmartStudy is a multi-agent Streamlit-based web application that allows users to upload PDFs, extract text, and query documents using OpenAI's GPT models. The application now leverages LangGraph to implement a multi-agent architecture, improving modularity, efficiency, and scalability. It uses a streamlit based interface with a Chatbot to allow users to have a back and forth conversation regarding their documents. 
+## Overview
+SmartStudy is a Streamlit-based application that allows users to upload and interact with PDFs. It utilizes AI-powered text embeddings to retrieve and answer questions based on PDF content. The application supports text extraction, image extraction, and table recognition.
 
 ## Features
-✅ Multi-Agent Architecture using LangGraph for modular and parallel processing.
-✅ PDF Upload & Processing – Extracts text, images, and tables from PDFs.
-✅ Efficient Document Retrieval – Uses LangChain with MongoDB & Chroma for vector search.
-✅ Conversational AI – Enables users to query documents and receive AI-generated responses.
+- Upload and process PDFs
+- Extract text using PyPDFLoader
+- Extract images with PyMuPDF (fitz)
+- Extract tables using pdfplumber
+- Store and retrieve PDF embeddings from MongoDB
+- Query PDFs using AI with OpenAI embeddings and Chroma vector database
+- Stream AI-generated responses in real-time
 
 ## Installation
+### Prerequisites
+Ensure you have the following installed:
+- Python 3.8+
+- MongoDB
+- OpenAI API Key
+
+### Clone the Repository
 ```sh
-# Install dependencies
-pip install -r backend/requirements.txt
-pip install -r frontend/requirements.txt
-
-# Run the backend (if needed in future expansion)
-python backend/backend.py
-
-# Run the Streamlit app
-streamlit run frontend/app.py
+$ git clone https://github.com/yourusername/docudive.git
+$ cd docudive
 ```
 
-## Project Structure
+### Install Dependencies
+```sh
+$ pip install -r requirements/requirements.txt
 ```
-SmartStudyPDFQueryApp/
-├── backend/    # Backend processing with LangGraph multi-agent architecture
-│   ├── backend.py
+
+### Set Environment Variables
+Create an `.env` file and add your OpenAI API key:
+```sh
+OPENAI_API_KEY=your_openai_api_key_here
+```
+Alternatively, you can set it in your shell:
+```sh
+$ export OPENAI_API_KEY=your_openai_api_key_here
+```
+
+## Running the Application
+1. Start MongoDB (if not running already):
+   ```sh
+   $ mongod --dbpath /path/to/your/db
+   ```
+2. Run the Streamlit app:
+   ```sh
+   $ streamlit run app.py
+   ```
+
+## Folder Structure
+```
+/docudive
+│── uploaded_pdfs/    # Stores user-uploaded PDFs
+│── pdfs/             # Preloaded PDFs (if any)
+│── chroma_db/        # Chroma vector store directory
+│── smartstudy.py            # Main Streamlit application
+│── requirements/     # Folder containing dependencies
 │   ├── requirements.txt
-├── frontend/   # Streamlit-based user interface
-│   ├── app.py
-│   ├── requirements.txt
-└── README.md   # Project documentation
+│── README.md         # This file
 ```
-## Multi-Agent Workflow
 
-```
-graph TD
-    A[User Uploads PDF] -->|Process Document| B[Document Processor Agent]
-    B -->|Extract Text, Images, Tables| C[Vector Storage Agent]
-    C -->|Store & Retrieve Embeddings| D[Chat Agent]
-    D -->|Generate AI Response| E[User Gets Answer]
-```
+## Usage
+- Select a PDF from the sidebar or upload a new one.
+- Ask a question related to the document.
+- The AI will retrieve relevant sections and generate a response.
+
+## Dependencies
+- `streamlit`
+- `pdfplumber`
+- `PyMuPDF (fitz)`
+- `pandas`
+- `langchain`
+- `pymongo`
+- `openai`
+
+
+## Contributions
+Pull requests and contributions are welcome! Feel free to improve the project and submit PRs.
+
+## Contact
+For questions or suggestions, contact Saksham Soti at sotisaksham@mgmail.com or open an issue in the repository.
