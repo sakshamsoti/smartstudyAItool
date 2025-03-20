@@ -1,6 +1,6 @@
 # SmartStudy - PDF Query Application
 
-SmartStudy is a multi-agent Streamlit-based web application that allows users to upload PDFs, extract text, and query documents using OpenAI's GPT models. The application now leverages LangGraph to implement a multi-agent architecture, improving modularity, efficiency, and scalability.
+SmartStudy is a multi-agent Streamlit-based web application that allows users to upload PDFs, extract text, and query documents using OpenAI's GPT models. The application now leverages LangGraph to implement a multi-agent architecture, improving modularity, efficiency, and scalability. It uses a streamlit based interface with a Chatbot to allow users to have a back and forth conversation regarding their documents. 
 
 ## Features
 ✅ Multi-Agent Architecture using LangGraph for modular and parallel processing.
