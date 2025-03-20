@@ -1,0 +1,7 @@
+streamlit
+pdfplumber
+pymupdf
+pandas
+langchain
+pymongo
+openai
